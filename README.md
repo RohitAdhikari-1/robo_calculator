@@ -16,11 +16,6 @@ Fast ⚡ Clean 🎨 Accurate 🧮
 
 ---
 
-## 📸 Preview
-
-<img width="800" alt="Robo Calculator Preview" src="YOUR_SCREENSHOT_LINK_HERE">
-
----
 
 ## 🛠️ Tech Stack
 
