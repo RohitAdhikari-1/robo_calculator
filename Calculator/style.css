@@ -1,0 +1,280 @@
+/* style.css */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop");
+  background-size:cover;
+  background-position:center;
+  overflow:hidden;
+}
+
+.container{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:60px;
+  flex-wrap:wrap;
+  padding:30px;
+}
+
+/* ROBOT */
+
+.robot-section{
+  text-align:center;
+  color:white;
+}
+
+.robot-section h1{
+  margin-top:25px;
+  font-size:42px;
+}
+
+.robot-section p{
+  font-size:18px;
+  opacity:0.9;
+}
+
+/* ROBOT DESIGN */
+
+.robot{
+  position:relative;
+  width:220px;
+  height:320px;
+  margin:auto;
+  animation:floatRobot 3s ease-in-out infinite;
+}
+
+@keyframes floatRobot{
+  0%{
+    transform:translateY(0px);
+  }
+  50%{
+    transform:translateY(-15px);
+  }
+  100%{
+    transform:translateY(0px);
+  }
+}
+
+/* HEAD */
+
+.head{
+  width:180px;
+  height:140px;
+  background:#00e5ff;
+  border-radius:30px;
+  margin:auto;
+  position:relative;
+  box-shadow:0 0 25px #00e5ff;
+}
+
+.head::before{
+  content:'';
+  width:10px;
+  height:40px;
+  background:#00e5ff;
+  position:absolute;
+  top:-35px;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.head::after{
+  content:'';
+  width:25px;
+  height:25px;
+  background:#ff4081;
+  border-radius:50%;
+  position:absolute;
+  top:-55px;
+  left:50%;
+  transform:translateX(-50%);
+  box-shadow:0 0 15px #ff4081;
+}
+
+/* EYES */
+
+.eyes{
+  display:flex;
+  justify-content:space-evenly;
+  padding-top:40px;
+}
+
+.eye{
+  width:28px;
+  height:28px;
+  background:white;
+  border-radius:50%;
+  position:relative;
+  animation:blink 4s infinite;
+}
+
+.eye::after{
+  content:'';
+  width:10px;
+  height:10px;
+  background:black;
+  border-radius:50%;
+  position:absolute;
+  top:9px;
+  left:9px;
+}
+
+@keyframes blink{
+  0%,90%,100%{
+    height:28px;
+  }
+  95%{
+    height:4px;
+  }
+}
+
+/* MOUTH */
+
+.mouth{
+  width:70px;
+  height:10px;
+  background:white;
+  border-radius:20px;
+  margin:25px auto;
+}
+
+/* BODY */
+
+.body{
+  width:140px;
+  height:120px;
+  background:#7c4dff;
+  margin:20px auto;
+  border-radius:25px;
+  box-shadow:0 0 20px #7c4dff;
+}
+
+/* ARMS */
+
+.arm{
+  width:25px;
+  height:100px;
+  background:#00e5ff;
+  position:absolute;
+  top:140px;
+  border-radius:20px;
+}
+
+.left-arm{
+  left:0;
+  transform:rotate(25deg);
+}
+
+.right-arm{
+  right:0;
+  transform:rotate(-25deg);
+}
+
+/* CALCULATOR */
+
+.calculator{
+  width:360px;
+  background:rgba(255,255,255,0.1);
+  backdrop-filter:blur(15px);
+  border:1px solid rgba(255,255,255,0.2);
+  border-radius:30px;
+  padding:25px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.4);
+}
+
+/* DISPLAY */
+
+#display{
+  width:100%;
+  height:85px;
+  border:none;
+  outline:none;
+  border-radius:20px;
+  margin-bottom:25px;
+  padding:20px;
+  font-size:32px;
+  text-align:right;
+  background:rgba(255,255,255,0.15);
+  color:white;
+  font-weight:600;
+}
+
+/* BUTTON GRID */
+
+.buttons{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+/* BUTTONS */
+
+button{
+  height:70px;
+  border:none;
+  border-radius:18px;
+  font-size:24px;
+  cursor:pointer;
+  transition:0.3s;
+  background:rgba(255,255,255,0.12);
+  color:white;
+  font-weight:600;
+  backdrop-filter:blur(10px);
+}
+
+button:hover{
+  transform:translateY(-4px) scale(1.03);
+  background:rgba(255,255,255,0.22);
+}
+
+/* OPERATORS */
+
+.operator{
+  background:linear-gradient(135deg,#ff9800,#ff5722);
+}
+
+/* EQUAL */
+
+.equal{
+  background:linear-gradient(135deg,#00c853,#00e676);
+  color:white;
+}
+
+/* ZERO BUTTON */
+
+.zero{
+  grid-column:span 2;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .container{
+    flex-direction:column;
+    gap:25px;
+  }
+
+  .robot-section h1{
+    font-size:32px;
+  }
+
+  .calculator{
+    width:100%;
+    max-width:360px;
+  }
+
+}
